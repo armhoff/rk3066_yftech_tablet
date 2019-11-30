@@ -1,0 +1,94 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;YFMR18;;;;;;;;;;;;;;;;;;;;;;;;
+;@ env_size = 0x1000
+;@ env_magic = 0x5F454E56 ;_env
+;@  RK30_PIN6_P%C%d = 320 8 1
+;@  RK30_PIN%d_P%C%d = 160 32 8 1
+;@ GPIO_INVALID = 0xFFFFFFFF
+;@ mode = clear
+
+ctp_supproted = gt82x ft5x06 byd693x ilitek
+ctp_ilitek_use_interupt=1
+acc_dir = 7
+acc_dir_mma8452 = 6
+wifi_supproted = RTL8188EU
+
+cam_name0 = sp2518
+cam_addr0 = 0x00000030
+cam_flag0 = 4
+cam_pd0 = RK30_PIN1_PB7
+
+cam_name2 = sp2518
+cam_addr2 = 0x00000030
+cam_flag2 = 4
+cam_pd2 = RK30_PIN1_PD6
+
+cam_name4 = gc2035
+cam_addr4 = 0x0000003c
+cam_flag4 = 4
+cam_pd4 = RK30_PIN1_PD6
+
+cam_name6 =BF3A20
+cam_addr6 = 0x0000006E
+cam_flag6 = 4
+cam_pd6 = RK30_PIN1_PD6
+
+cam_name1 = sp0718
+cam_pd1 = RK30_PIN1_PD6
+cam_flag1 = 4
+cam_addr1 = 0x00000021
+
+cam_name3 = sp0718
+cam_pd3 = RK30_PIN1_PB7
+cam_flag3 = 4
+cam_addr3= 0x00000021
+
+cam_name5 = gc0308
+cam_pd5 = RK30_PIN1_PB7
+cam_flag5 = 4
+cam_addr5 = 0x00000021
+
+cam_name7 = BF3703
+cam_pd7 = RK30_PIN1_PB7
+cam_flag7 = 4
+cam_addr7 = 0x0000006E
+
+lcd_h_pw = 10
+lcd_h_bp = 150
+lcd_h_vd = 1024
+lcd_h_fp = 160
+
+lcd_v_pw = 5
+lcd_v_bp = 18
+lcd_v_vd = 768
+lcd_v_fp = 15
+
+lcd_width = 160
+lcd_height = 120
+
+power_vol_coff1 = 324797 ;5070 : 1023
+power_vol_coff2 = 0
+power_charge_coff = 45
+power_bright_coff1 = 944
+power_bright_coff2 = 30120
+power_ac_gpio = RK30_PIN6_PA5
+power_ac_level = 0
+power_charge_gpio = RK30_PIN6_PA6
+power_status_coff1 = 15500
+power_status_coff2 = 58980
+power_v2c_table = 3612, 0, 3655, 5, 3718, 19, 3741, 29, 3789, 44, 3874, 61, 3974, 77, 4057, 86, 4170, 100
+power_dc_table = 3702, 0, 3744, 5, 3805, 19, 3828, 29, 3874, 44, 3958, 61, 4055, 77, 4134, 86, 4232, 100
+
+es8323_spk_gain = 0x00000021
+
+;@ mode = append
+init = on init
+init = setprop persist.sys.language zh
+init = setprop persist.sys.country CN
+init = setprop persist.sys.timezone Asia/Shanghai
+init = setprop ro.product.model MR18
+init = setprop ro.product.brand yftech
+init = setprop ro.product.name mr18
+init = setprop ro.product.device mr18
+init = setprop ro.sf.hwrotation 90
+init = setprop ro.sf.fakerotation 270
+init = setprop ro.sf.reverseport 1

@@ -1,0 +1,61 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;YFMR13;;;;;;;;;;;;;;;;;;;;;;;;
+;@ env_size = 0x1000
+;@ env_magic = 0x5F454E56 ;_env
+;@  RK30_PIN6_P%C%d = 320 8 1
+;@  RK30_PIN%d_P%C%d = 160 32 8 1
+;@ GPIO_INVALID = 0xFFFFFFFF
+;@ mode = clear
+
+ctp_supproted = ilitek
+lcd_en_pol = 1
+lcd_bl_min = 65
+lcd_bl_cof1 = 65536
+lcd_bl_cof2 = 65
+acc_dir = 5
+wifi_supproted = MT5931
+cam_name0 = hi253
+cam_pd0 = RK30_PIN1_PD6
+cam_flag0 = 4
+cam_addr0 = 0x00000020
+cam_name1 = hi253
+cam_pd1 = RK30_PIN1_PB7
+cam_flag1 = 4
+cam_addr1 = 0x00000020
+
+cam_name2 = gc2035_mr13
+cam_addr2 = 0x0000003c
+cam_flag2 = 4
+cam_pd2 = RK30_PIN1_PD6
+
+cam_name3 = gc2035_mr13
+cam_addr3= 0x0000003c
+cam_flag3 = 4
+cam_pd3 = RK30_PIN1_PB7
+
+power_vol_coff1 = 324797 ;5070 : 1023
+power_vol_coff2 = 0
+power_charge_coff = 68
+power_bright_coff1 = 1410
+power_bright_coff2 = 114600
+power_ac_gpio = RK30_PIN6_PA5
+power_ac_level = 0
+power_charge_gpio = RK30_PIN6_PA6
+power_v2c_table = 3611, 0, 3674, 13, 3698, 20, 3734, 31, 3795, 45, 3823, 51, 3970, 75, 4147, 98, 4171, 100
+power_dc_table = 3671, 0, 3734, 13, 3758, 20, 3794, 31, 3855, 45, 3883, 51, 4030, 75, 4200, 97, 4231, 100
+
+es8323_mic_gain = 0x00000066
+es8323_spk_gain = 0x00000021
+
+;@ mode = append
+init = on init
+init = setprop persist.sys.language zh
+init = setprop persist.sys.country CN
+init = setprop persist.sys.timezone Asia/Shanghai
+init = setprop ro.product.model MR13
+init = setprop ro.product.brand yftech
+init = setprop ro.product.name mr13
+init = setprop ro.product.device mr13
+init = setprop ro.sf.hwrotation 90
+init = setprop ro.sf.fakerotation 270
+init = setprop ro.sf.reverseport 1
+
