@@ -75,16 +75,7 @@ source "drivers/net/wireless/ar6003/Kconfig"
 source "drivers/net/wireless/rkwifi/Kconfig"
 endchoice
 
-	config MT5931
-	  depends on WLAN_80211 && MMC
-	  select WIRELESS_EXT
-	  select WEXT_PRIV
-	  select IEEE80211
-	  select FW_LOADER
-	  bool "MTK MT5931 SDIO"
-	  ---help---
-	    A library for MTK MT5931 SDIO WLAN devices.
-	    So far, the following modules have been verified: MTK5931
+source "drivers/net/wireless/mt5931/Kconfig"
 
 choice	
 	depends on RKWIFI && WLAN_80211

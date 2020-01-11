@@ -29,7 +29,8 @@ endif
 #endif
 
 #MODULE_NAME := wlan_mt6620
-MODULE_NAME := wlan  ##mark skynine modify MT6620-->MT5931
+#MODULE_NAME := wlan  ##mark skynine modify MT6620-->MT5931
+MODULE_NAME := mt5931
 
 ccflags-y += -D_HIF_SDIO=1
 
@@ -40,8 +41,7 @@ ccflags-y += -I$(src)/os -I$(src)/os/linux/include -I$(src)/os/linux/hif/sdio/in
 ccflags-y += -I$(src)/include -I$(src)/include/nic -I$(src)/include/mgmt
 
 #obj-$(CONFIG_MTK_COMBO_WIFI) += $(MODULE_NAME).o
-#obj-$(CONFIG_MT5931) += $(MODULE_NAME).o
-#obj-y += $(MODULE_NAME).o
+obj-$(CONFIG_MT5931) += $(MODULE_NAME).o
 
 # ---------------------------------------------------
 # Directory List
@@ -138,11 +138,11 @@ endif
 HIF_OBJS :=  $(HIF_DIR)arm.o \
              $(HIF_DIR)sdio.o
 
-obj-y  += $(COMMON_OBJS)
-obj-y  += $(NIC_OBJS)
-obj-y  += $(OS_OBJS)
-obj-y  += $(HIF_OBJS)
-obj-y  += $(MGMT_OBJS)
+$(MODULE_NAME)-y += $(COMMON_OBJS)
+$(MODULE_NAME)-y += $(NIC_OBJS)
+$(MODULE_NAME)-y += $(OS_OBJS)
+$(MODULE_NAME)-y += $(HIF_OBJS)
+$(MODULE_NAME)-y += $(MGMT_OBJS)
 
 
 clean:

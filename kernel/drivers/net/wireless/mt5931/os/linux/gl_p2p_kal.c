@@ -1359,12 +1359,14 @@ kalP2PGOStationUpdate (
         prP2pGlueInfo = prGlueInfo->prP2PInfo;
 
         if (fgIsNew) {
+#if LINUX_VERSION_CODE > KERNEL_VERSION(3, 0, 8)
             rStationInfo.filled = STATION_INFO_ASSOC_REQ_IES;		
             rStationInfo.generation = ++prP2pGlueInfo->i4Generation;
 
             rStationInfo.assoc_req_ies = prCliStaRec->pucAssocReqIe;
             rStationInfo.assoc_req_ies_len = prCliStaRec->u2AssocReqIeLen;
 //          rStationInfo.filled |= STATION_INFO_ASSOC_REQ_IES;
+#endif
 
             cfg80211_new_sta(prGlueInfo->prP2PInfo->prDevHandler, //struct net_device * dev,
                             prCliStaRec->aucMacAddr,

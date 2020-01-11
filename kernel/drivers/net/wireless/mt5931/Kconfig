@@ -2,18 +2,11 @@
 	  depends on WLAN_80211 && MMC
 	  select WIRELESS_EXT
 	  select WEXT_PRIV
+	  select IEEE80211
+	  select FW_LOADER
 	  select CFG80211
-          select NL80211_TESTMODE
-	  bool "MediaTek MT5931 WiFi"
+	  select NL80211_TESTMODE
+	  tristate "MediaTek MT5931 SDIO WiFi"
 	  ---help---
-	    MediaTek MT5931 WiFi
-
-	config MT5931_MT6622
-	  depends on WLAN_80211 && MMC
-	  select WIRELESS_EXT
-	  select WEXT_PRIV
-	  select CFG80211
-          select NL80211_TESTMODE
-	  bool "MediaTek MT5931 & MT6622 WiFi Bluetooth Combo"
-	  ---help---
-	    MediaTek MT5931 & MT6622 WiFi Bluetooth Combo
+	    A driver for MTK MT5931 SDIO WLAN devices.
+	    So far, the following modules have been verified: MTK5931

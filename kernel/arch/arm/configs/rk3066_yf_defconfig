@@ -1197,7 +1197,7 @@ CONFIG_RTL8192CU=y
 # CONFIG_RTL8188EU is not set
 # CONFIG_AR6003 is not set
 # CONFIG_RKWIFI is not set
-CONFIG_MT5931=y
+CONFIG_MT5931=m
 
 #
 # Enable WiMAX (Networking options) to see the WiMAX drivers
